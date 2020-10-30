@@ -24,3 +24,23 @@ require(rgl)
 require(knitr)
 require(ggplot)
 ```
+
+###Plot scatterplot
+
+```{r}
+plot(SIMS~ARM,data=dataF)
+```
+
+```{r}
+basicNN <- ggplot(dataF,aes(y=SIMS,x=ARM))
+basicNN + geom_point()+ geom_smooth(method=lm)
+```
+
+## now add the model fit to our plot
+
+```{r}
+model.1 <- lm(SIMS~ARM,data=dataF)
+summary.lm(model.1)
+New= data.frame(grip=94,ARM=88)
+predict.lm(model.1,New,interval = "prediction")
+```
