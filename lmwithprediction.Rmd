@@ -41,8 +41,15 @@ basicNN + geom_point()+ geom_smooth(method=lm)
 ```{r}
 model.1 <- lm(SIMS~ARM,data=dataF)
 summary.lm(model.1)
-New= data.frame(grip=94,ARM=88)
+New= data.frame(GRIP=94,ARM=88)
 predict.lm(model.1,New,interval = "prediction")
 ```
 Model 1 fit, the adjusted r-square is 0.467. About 47% of the variability in SIMS can be explained by the variability in ARM. The predicted score for SIMS is 0.71. The 95% confidence interval is from -1.726209 to 3.138977.
 
+
+```{r}
+model.2 <- lm(SIMS~GRIP,data=dataF)
+summary.lm(model.2)
+New= data.frame(GRIP=94,ARM=88)
+predict.lm(model.2,New,interval = "prediction")
+```
