@@ -63,7 +63,12 @@ New= data.frame(GRIP=94,ARM=88)
 predict.lm(model.3,New,interval = "prediction")
 ```
 
-Model 3 fit, the adjusted R-square is 0.5358. About 54% of the variability in SIMS can be explained by the variability in both ARM and GRP. The predicted score in  is 0.15. The 95% confident interval score is from -2.132373 to 2.431668.
+Model 3 fit, the adjusted R-square is 0.5358. About 54% of the variability in SIMS can be explained by the variability in both ARM and GRP. The predicted score in SIMS is 0.15. The 95% confident interval score is from -2.132373 to 2.431668.
 
+```{r}
+anova(model.1,model.3)
+```
 
+## Conclution
 
+The anova compares model 1 and model 3. The P-value is 00000499, so we reject the null hypothesis. Both of these models are trying to predict SIMS. The null hypothesis about these models would be that there is no difference in either model predicting. The alternative hypothesis is that there is a difference because one model is better than the other. 
