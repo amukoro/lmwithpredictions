@@ -53,3 +53,17 @@ summary.lm(model.2)
 New= data.frame(GRIP=94,ARM=88)
 predict.lm(model.2,New,interval = "prediction")
 ```
+
+Model 2 fit,the adjusted R-square is 0.4053. About 41% of the variability in SIMS can be explained by the variability in GRIP. The predicted score in SIMS is -0.54. The 95% confidence interval is  from -3.167961 to 2.035652.
+
+```{r}
+model.3 <- lm(SIMS~ARM + GRIP,data=dataF)
+summary.lm(model.3)
+New= data.frame(GRIP=94,ARM=88)
+predict.lm(model.3,New,interval = "prediction")
+```
+
+Model 3 fit, the adjusted R-square is 0.5358. About 54% of the variability in SIMS can be explained by the variability in both ARM and GRP. The predicted score in  is 0.15. The 95% confident interval score is from -2.132373 to 2.431668.
+
+
+
